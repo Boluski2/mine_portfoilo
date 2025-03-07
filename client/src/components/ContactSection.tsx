@@ -57,7 +57,7 @@ export default function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const response = await fetch('http://localhost:3000/send-email', {
+      const response = await fetch('https://adeboluserver.vercel.app/send-email', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
