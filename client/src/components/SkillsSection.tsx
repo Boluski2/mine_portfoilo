@@ -67,7 +67,7 @@ const SkillBar = ({ name, level }: Skill) => {
       <div className="flex justify-between items-center mb-1">
         <span className="font-medium text-sm">{name}</span>
         <span className={`text-xs ${hovered ? "opacity-100" : "opacity-60"} transition-opacity`}>
-          {level}%
+          {/* {level}% */}
         </span>
       </div>
       <div
@@ -78,8 +78,8 @@ const SkillBar = ({ name, level }: Skill) => {
         <div
           className="h-full bg-primary transition-all duration-500 ease-out rounded-full"
           style={{ 
-            width: hovered ? `${level}%` : "0%", 
-            transitionDelay: hovered ? "0ms" : "200ms" 
+            // width: hovered ? `${level}%` : "0%", 
+            // transitionDelay: hovered ? "0ms" : "200ms" 
           }}
         ></div>
       </div>
