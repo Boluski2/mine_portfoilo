@@ -132,7 +132,7 @@ export default function HeroSection() {
               </Button> */}
               <Button variant="outline" className="rounded-full">
                 <Download className="mr-2" />
-               <a href="/Adebolu's CV Pdf.pdf">Download Resume</a>
+               <a href="/BABATUNDEADEBOLU_Cv.docx">Download Resume</a>
               </Button>
             </div>
           </AnimatedReveal>
