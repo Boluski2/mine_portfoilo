@@ -17,7 +17,7 @@ app.post('/send-email', async (req, res) => {
         return res.status(405).json({ status: 'failed', response: 'Method not allowed' });
     }
 
-    const { name, email, phone, subject, message } = req.body; // ✅ Include `phone`
+    const { name, email, phone, subject, message } = req.body; 
 
     if (!name || !email || !phone || !subject || !message) {
         return res.status(400).json({ status: 'failed', response: 'All fields are required' });
@@ -29,9 +29,9 @@ app.post('/send-email', async (req, res) => {
 
     try {
         const transporter = nodemailer.createTransport({
-          host: process.env.MAIL_HOST,  // ✅ Ensure this is set in `.env`
+          host: process.env.MAIL_HOST,  // 
           port: process.env.MAIL_PORT || 587,
-          secure: process.env.MAIL_PORT == 465, // ✅ Secure only if using port 465
+          secure: process.env.MAIL_PORT == 465, // 
           auth: {
             user: process.env.MAIL_USER,
             pass: process.env.MAIL_PASS,
@@ -60,7 +60,7 @@ app.post('/send-email', async (req, res) => {
         await transporter.sendMail(mailOptions);
         return res.status(200).json({ status: 'success', response: 'Message sent successfully' });
 
-    } catch (error) { // ✅ Fix `catch` block
+    } catch (error) { 
         return res.status(500).json({ status: 'failed', response: `Mailer Error: ${error.message}` });
     }
 });
