@@ -132,7 +132,7 @@ export default function HeroSection() {
               </Button> */}
               <Button variant="outline" className="rounded-full">
                 <Download className="mr-2" />
-               <a href="/BABATUNDEADEBOLU_Cv.docx">Download Resume</a>
+               <a href="/My Cv.pdf" target="_blank">Download Resume</a>
               </Button>
             </div>
           </AnimatedReveal>
@@ -155,11 +155,11 @@ export default function HeroSection() {
           </AnimatedReveal>
         </div>
         
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        {/* <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
           <a href="#about" aria-label="Scroll down">
             <ArrowDownCircle className="h-10 w-10 opacity-60" />
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );
