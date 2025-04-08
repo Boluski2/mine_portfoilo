@@ -17,6 +17,15 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    title: "OEA Consults",
+    description: "OEA Consults provide novel and innovative solutions using drones, GIS, and artificial intelligence in data collection, analysis, and visualization.",
+    image: "./Oea_logo.png",
+    tags: ["React", "Node.js", "TypeScript", "Mongodb", "Express.js"],
+    liveUrl: "https://oea-consults.vercel.app/",
+    githubUrl: "https://github.com/Boluski2/OEA_Consults",
+  },
+  {
+    id: 2,
     title: "Real Estate Platform",
     description: "A full-featured Real Estate platform built with React, Node.js, and MongoDB.",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
@@ -25,7 +34,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Boluski2/Real_Estate.git",
   },
   {
-    id: 2,
+    id: 3,
     title: "Financial Expert Website",
     description: "A financial expert website with a modern design and animated sections.",
     image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTgyMTB8MHwxfHNlYXJjaHwyN3x8ZmluYW5jaWFsJTIwfGVufDB8fHx8MTc0MTMzNTgxN3ww&ixlib=rb-4.0.3&q=80&w=400",
@@ -34,7 +43,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Boluski2/bimbs",
   },
   {
-    id: 3,
+    id: 4,
     title: "Animated Burger Website",
     description: "A Burger website with animated hero section and interactive menu.",
     image: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTgyMTB8MHwxfHNlYXJjaHw4fHxidXJnZXJ8ZW58MHx8fHwxNzQxMzM1OTA5fDA&ixlib=rb-4.0.3&q=80&w=400",
@@ -43,7 +52,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Boluski2/burger-website",
   },
   {
-    id: 4,
+    id: 5,
     title: "Real-time Image Chat App",
     description: "A Real-time Image Chat App for seamless communication.",
     image: "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTgyMTB8MHwxfHNlYXJjaHwyfHxBJTIwUmVhbCUyMHRpbWUlMjBJbWFnZSUyMENoYXQlMjBBcHB8ZW58MHx8fHwxNzQxMzM1OTQ4fDA&ixlib=rb-4.0.3&q=80&w=400",
@@ -52,7 +61,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Boluski2/ImagaApp",
   },
   {
-    id: 5,
+    id: 6,
     title: "Education Website",
     description: "A client project for a personal education tutor.",
     image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTgyMTB8MHwxfHNlYXJjaHwyfHxlZHVjYXRpb258ZW58MHx8fHwxNzQxMzM2MDQ5fDA&ixlib=rb-4.0.3&q=80&w=400",
