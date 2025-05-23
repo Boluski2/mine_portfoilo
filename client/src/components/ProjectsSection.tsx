@@ -21,7 +21,7 @@ const projects: Project[] = [
     description: "OEA Consults provide novel and innovative solutions using drones, GIS, and artificial intelligence in data collection, analysis, and visualization.",
     image: "./Oea_logo.png",
     tags: ["React", "Node.js", "TypeScript", "Mongodb", "Express.js"],
-    liveUrl: "https://oea-consults.vercel.app/",
+    liveUrl: "https://www.oeaconsults.com/",
     githubUrl: "https://github.com/Boluski2/OEA_Consults",
   },
   {
@@ -35,12 +35,12 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Financial Expert Website",
-    description: "A financial expert website with a modern design and animated sections.",
-    image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTgyMTB8MHwxfHNlYXJjaHwyN3x8ZmluYW5jaWFsJTIwfGVufDB8fHx8MTc0MTMzNTgxN3ww&ixlib=rb-4.0.3&q=80&w=400",
+    title: "Forever E-commerce website",
+    description: "E-commerce website with a modern design and user-friendly interface.",
+    image: "/lastest.png",
     tags: ["Nextjs", "Node.js", "Monogodb", "Tailwindcss", "Express.js"],
-    liveUrl: "https://bimbs.vercel.app/",
-    githubUrl: "https://github.com/Boluski2/bimbs",
+    liveUrl: "https://e-commers-frontend-three.vercel.app/",
+    githubUrl: "https://github.com/Boluski2/e-commers.git",
   },
   {
     id: 4,
