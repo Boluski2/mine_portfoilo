@@ -121,7 +121,7 @@ export default function HeroSection() {
           
           <AnimatedReveal delay={400}>
             <p className="text-xl text-muted-foreground mb-8 max-w-xl mx-auto">
-              I design and build beautiful, functional web applications with a focus on user experience, performance, and accessibility.
+              I desiggn and build beautiful, functional web applications with a focus on user experience, performance, and accessibility.
             </p>
           </AnimatedReveal>
           
@@ -132,7 +132,7 @@ export default function HeroSection() {
               </Button> */}
               <Button variant="outline" className="rounded-full">
                 <Download className="mr-2" />
-               <a href="/My Cv.pdf" target="_blank">Download Resume</a>
+               <a href="/AdeboluBabatundeCv.pdf" target="_blank">Download Resume</a>
               </Button>
             </div>
           </AnimatedReveal>
