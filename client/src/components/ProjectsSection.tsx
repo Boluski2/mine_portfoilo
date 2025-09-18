@@ -26,6 +26,15 @@ const projects: Project[] = [
   },
   {
     id: 2,
+    title: "TimeOffer",
+    description: "TimeOff: Streamlined employee time-off management with seamless onboarding and intuitive dashboard.",
+    image: "/atendance.webp",
+    tags: ["React", "Node.js", "Mongodb", "Auth0", "Prisma", "Express.js"],
+    liveUrl: "https://time-offer-beta.vercel.app/",
+    githubUrl: "",
+  },
+  {
+    id: 3,
     title: "Real Estate Platform",
     description: "A full-featured Real Estate platform built with React, Node.js, and MongoDB.",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
@@ -34,7 +43,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Boluski2/Real_Estate.git",
   },
   {
-    id: 3,
+    id: 4,
     title: "Forever E-commerce website",
     description: "E-commerce website with a modern design and user-friendly interface.",
     image: "/lastest.png",
@@ -43,7 +52,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Boluski2/e-commers.git",
   },
   {
-    id: 4,
+    id: 5,
     title: "Animated Burger Website",
     description: "A Burger website with animated hero section and interactive menu.",
     image: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTgyMTB8MHwxfHNlYXJjaHw4fHxidXJnZXJ8ZW58MHx8fHwxNzQxMzM1OTA5fDA&ixlib=rb-4.0.3&q=80&w=400",
@@ -52,7 +61,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Boluski2/burger-website",
   },
   {
-    id: 5,
+    id: 6,
     title: "Real-time Image Chat App",
     description: "A Real-time Image Chat App for seamless communication.",
     image: "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTgyMTB8MHwxfHNlYXJjaHwyfHxBJTIwUmVhbCUyMHRpbWUlMjBJbWFnZSUyMENoYXQlMjBBcHB8ZW58MHx8fHwxNzQxMzM1OTQ4fDA&ixlib=rb-4.0.3&q=80&w=400",
@@ -61,7 +70,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Boluski2/ImagaApp",
   },
   {
-    id: 6,
+    id: 7,
     title: "Education Website",
     description: "A client project for a personal education tutor.",
     image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTgyMTB8MHwxfHNlYXJjaHwyfHxlZHVjYXRpb258ZW58MHx8fHwxNzQxMzM2MDQ5fDA&ixlib=rb-4.0.3&q=80&w=400",
@@ -125,7 +134,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       <div className="p-4">
         <div className="flex flex-wrap gap-1 mb-2">
           {project.tags.slice(0, 2).map((tag) => (
-            <Badge key={tag} variant="secondary" className="font-normal text-xs">
+            <Badge key={tag} variant="secondary" className="font-normal text-1xs">
               {tag}
             </Badge>
           ))}
@@ -136,7 +145,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           )}
         </div>
         <h3 className="text-lg font-semibold mb-1">{project.title}</h3>
-        <p className="text-muted-foreground text-xs mb-3">
+        <p className="text-muted-foreground text-ls mb-3">
           {project.description}
         </p>
         <div className="flex items-center justify-between pt-1">
@@ -176,7 +185,7 @@ export default function ProjectsSection() {
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
               Featured Projects
             </h2>
-            <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               A selection of my recent work, showcasing my skills in full-stack development,
               responsive design, and creating engaging user experiences.
             </p>
