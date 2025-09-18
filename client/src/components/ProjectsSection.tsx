@@ -17,7 +17,7 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "OEA Consults",
+    title: "OEA Consults Ltd",
     description: "OEA Consults provide novel and innovative solutions using drones, GIS, and artificial intelligence in data collection, analysis, and visualization.",
     image: "./Oea_logo.png",
     tags: ["React", "Node.js", "TypeScript", "Mongodb", "Express.js"],
