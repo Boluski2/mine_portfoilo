@@ -26,6 +26,15 @@ const projects: Project[] = [
   },
   {
     id: 2,
+    title: "Magodo Drive",
+    description: "Magodo Drive presents itself as a clean, contemporary, and user-centric web application. The landing page features a sophisticated dark-themed interface, punctuated with vibrant accents that create a visually striking and professional first impression.",
+    image: "/drive.png",
+    tags: ["React"],
+    liveUrl: "https://magododrive.vercel.app/",
+    githubUrl: "",
+  },
+  {
+    id: 3,
     title: "TimeOffer",
     description: "TimeOff: Streamlined employee time-off management with seamless onboarding and intuitive dashboard.",
     image: "/atendance.webp",
@@ -34,7 +43,7 @@ const projects: Project[] = [
     githubUrl: "",
   },
   {
-    id: 3,
+    id: 4,
     title: "Real Estate Platform",
     description: "A full-featured Real Estate platform built with React, Node.js, and MongoDB.",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
@@ -43,7 +52,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Boluski2/Real_Estate.git",
   },
   {
-    id: 4,
+    id: 5,
     title: "Forever E-commerce website",
     description: "E-commerce website with a modern design and user-friendly interface.",
     image: "/lastest.png",
@@ -52,7 +61,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Boluski2/e-commers.git",
   },
   {
-    id: 5,
+    id: 6,
     title: "Animated Burger Website",
     description: "A Burger website with animated hero section and interactive menu.",
     image: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTgyMTB8MHwxfHNlYXJjaHw4fHxidXJnZXJ8ZW58MHx8fHwxNzQxMzM1OTA5fDA&ixlib=rb-4.0.3&q=80&w=400",
@@ -61,7 +70,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Boluski2/burger-website",
   },
   {
-    id: 6,
+    id: 7,
     title: "Real-time Image Chat App",
     description: "A Real-time Image Chat App for seamless communication.",
     image: "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTgyMTB8MHwxfHNlYXJjaHwyfHxBJTIwUmVhbCUyMHRpbWUlMjBJbWFnZSUyMENoYXQlMjBBcHB8ZW58MHx8fHwxNzQxMzM1OTQ4fDA&ixlib=rb-4.0.3&q=80&w=400",
@@ -70,7 +79,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Boluski2/ImagaApp",
   },
   {
-    id: 7,
+    id: 8,
     title: "Education Website",
     description: "A client project for a personal education tutor.",
     image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTgyMTB8MHwxfHNlYXJjaHwyfHxlZHVjYXRpb258ZW58MHx8fHwxNzQxMzM2MDQ5fDA&ixlib=rb-4.0.3&q=80&w=400",
