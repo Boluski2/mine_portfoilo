@@ -1,10 +1,320 @@
 
+// import { useState } from "react";
+// import { Mail, MapPin, Phone, Send } from "lucide-react";
+// import { Button } from "@/components/ui/button";
+// import { Input } from "@/components/ui/input";
+// import { Textarea } from "@/components/ui/textarea";
+// import { useToast } from "@/components/ui/use-toast";
+// import AnimatedReveal from "@/components/AnimatedReveal";
+
+// interface ContactInfo {
+//   icon: React.ReactNode;
+//   title: string;
+//   content: string;
+//   link?: string;
+// }
+
+// const contactInfo: ContactInfo[] = [
+//   {
+//     icon: <Mail className="h-5 w-5" />,
+//     title: "Email",
+//     content: "babatundebolu@gmail.com",
+//     link: "babatundebolu@gmail.com",
+//   },
+//   {
+//     icon: <Phone className="h-5 w-5" />,
+//     title: "Phone",
+//     content: "+2348140830241",
+//     link: "tel:+2348140830241",
+//   },
+//   {
+//     icon: <MapPin className="h-5 w-5" />,
+//     title: "Location",
+//     content: "Lagos, Nigeria",
+//   },
+// ];
+
+// export default function ContactSection() {
+  
+//   const [formData, setFormData] = useState({
+//     name: "",
+//     phone: "",
+//     email: "",
+//     subject: "",
+//     message: "",
+//   });
+//   const { toast } = useToast();
+//   const [isSubmitting, setIsSubmitting] = useState(false);
+//   const [submitStatus, setSubmitStatus] = useState<"success" | "failed" | null>(null);
+
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData(prev => ({ ...prev, [name]: value }));
+//   };
+
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     setIsSubmitting(true);
+//     try {
+//       const response = await fetch('https://adeboluserver.vercel.app/send-email', {
+//           method: 'POST',
+//           headers: { 'Content-Type': 'application/json' },
+//           body: JSON.stringify(formData)
+//       });
+
+//       const data = await response.json();
+
+//       if (data.status === 'success') {
+//           setSubmitStatus('success');
+//           setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+//       } else {
+//           setSubmitStatus('failed');
+//       }
+//   } catch (error) {
+//       console.error('Error sending message:', error);
+//       setSubmitStatus('failed');
+//   }
+
+//   setIsSubmitting(false);
+
+//   // Clear status message after 5 seconds
+//   setTimeout(() => {
+//       setSubmitStatus(null);
+//   }, 5000);
+// };
+
+//   return (
+//     <section id="contact" className="py-20">
+//       <div className="container mx-auto px-4">
+//         <AnimatedReveal>
+//           <div className="text-center mb-16">
+//             <p className="inline-block rounded-full bg-gray-100 dark:bg-gray-800 px-3 py-1 text-sm font-medium mb-3">
+//               Get In Touch
+//             </p>
+//             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
+//               Let's Work Together
+//             </h2>
+//             <p className="text-muted-foreground max-w-2xl mx-auto">
+//               Have a project in mind or want to discuss a potential collaboration? I'd love to hear from you! Fill out the form below or reach out through any of the provided contact methods.
+//             </p>
+//           </div>
+//         </AnimatedReveal>
+
+//         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+//           <AnimatedReveal delay={200} className="col-span-1">
+//             <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm border border-gray-100 dark:border-gray-700 h-full">
+//               <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+//               <div className="space-y-6">
+//                 {contactInfo.map((item, index) => (
+//                   <div key={index} className="flex items-start">
+//                     <div className="bg-gray-100 dark:bg-gray-700 rounded-full p-2 mr-4">
+//                       {item.icon}
+//                     </div>
+//                     <div>
+//                       <h4 className="text-sm font-medium text-muted-foreground mb-1">
+//                         {item.title}
+//                       </h4>
+//                       {item.link ? (
+//                         <a
+//                           href={item.link}
+//                           className="text-base hover-underline"
+//                         >
+//                           {item.content}
+//                         </a>
+//                       ) : (
+//                         <p className="text-base">{item.content}</p>
+//                       )}
+//                     </div>
+//                   </div>
+//                 ))}
+//               </div>
+
+//               <div className="mt-10">
+//                 <h3 className="text-xl font-semibold mb-4">Follow Me</h3>
+//                 <div className="flex space-x-4">
+//                   <a
+//                     href="https://github.com/"
+//                     className="bg-gray-100 dark:bg-gray-700 rounded-full p-2 hover:scale-110 transition-transform"
+//                     aria-label="GitHub"
+//                   >
+//                     <svg className="h-5 w-5" viewBox="0 0 24 24">
+//                       <path
+//                         fill="currentColor"
+//                         d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12c0-5.523-4.477-10-10-10z"
+//                       />
+//                     </svg>
+//                   </a>
+//                   <a
+//                     href="https://www.linkedin.com/feed/"
+//                     className="bg-gray-100 dark:bg-gray-700 rounded-full p-2 hover:scale-110 transition-transform"
+//                     aria-label="LinkedIn"
+//                   >
+//                     <svg className="h-5 w-5" viewBox="0 0 24 24">
+//                       <path
+//                         fill="currentColor"
+//                         d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+//                       />
+//                     </svg>
+//                   </a>
+//                   <a
+//                     href="https://wa.me/2348182296188"
+//                     className="bg-gray-100 dark:bg-gray-700 rounded-full p-2 hover:scale-110 transition-transform"
+//                     aria-label="WhatSapp"
+//                     target="_blank"
+//                   >
+//                     <svg className="h-5 w-5" viewBox="0 0 24 24">
+//                     <path
+//                      fill="currentColor"
+//                      d="M16.2 3.8A9.88 9.88 0 003.1 16.6L2 21.8l5.3-1.4a9.9 9.9 0 0014.4-8.7c0-2.6-1-5-2.9-6.9a9.88 9.88 0 00-2.6-1.9zM12 19.4a7.4 7.4 0 01-3.9-1.1L6 18l.7-2.4a7.4 7.4 0 01-1.1-3.9 7.4 7.4 0 0112.7-5.3 7.4 7.4 0 01-5.3 12.7zm3.5-5.5c-.2-.1-1.3-.6-1.5-.7s-.4-.1-.6.2c-.2.2-.7.7-.8.8-.1.2-.3.1-.5.1s-.9-.3-1.7-1c-.6-.6-1-1.3-1.1-1.5s0-.4.1-.5l.7-.8c.1-.2.2-.3.2-.6s0-.4-.1-.6-.6-1.5-.7-1.7c-.2-.3-.3-.3-.5-.3h-.6c-.2 0-.6.1-.9.4s-1.1 1-1.1 2.4 1.1 2.7 1.2 2.8c.1.2 2.2 3.5 5.3 4.8 1 .4 1.8.6 2.4.8 1 .3 1.9.3 2.6.2s1.3-.6 1.5-1.1c.2-.5.2-1 .2-1.1s-.2-.2-.4-.3z"
+//                     />
+
+//                     </svg>
+//                   </a>
+//                 </div>
+//               </div>
+//             </div>
+//           </AnimatedReveal>
+
+//           <AnimatedReveal delay={400} className="col-span-1 lg:col-span-2">
+//             <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+//               <h3 className="text-xl font-semibold mb-6">Send a Message</h3>
+//               {submitStatus === 'success' && (
+//                 <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-700">
+//                   Thank you for your message! I'll get back to you shortly.
+//                 </div>
+//               )}
+//             <form onSubmit={handleSubmit} className="space-y-6">
+//   <div className="flex flex-col gap-6">
+//     <div className="flex flex-col">
+//       <label htmlFor="name" className="block text-sm font-medium mb-2">
+//         Name
+//       </label>
+//       <Input
+//         id="name"
+//         name="name"
+//         value={formData.name}
+//         onChange={handleChange}
+//         placeholder="Your name"
+//         required
+//         className="w-full"
+//       />
+//     </div>
+//     <div className="flex flex-col">
+//       <label htmlFor="phone" className="block text-sm font-medium mb-2">
+//         Phone
+//       </label>
+//       <Input
+//         id="phone"
+//         name="phone"
+//         type="tel"
+//         value={formData.phone}
+//         onChange={handleChange}
+//         placeholder="Number"
+//         required
+//         className="w-full"
+//       />
+//     </div>
+//     <div className="flex flex-col">
+//       <label htmlFor="email" className="block text-sm font-medium mb-2">
+//         Email
+//       </label>
+//       <Input
+//         id="email"
+//         name="email"
+//         type="email"
+//         value={formData.email}
+//         onChange={handleChange}
+//         placeholder="your.email@example.com"
+//         required
+//         className="w-full"
+//       />
+//     </div>
+//     <div className="flex flex-col">
+//       <label htmlFor="subject" className="block text-sm font-medium mb-2">
+//         Subject
+//       </label>
+//       <Input
+//         id="subject"
+//         name="subject"
+//         value={formData.subject}
+//         onChange={handleChange}
+//         placeholder="What is this regarding?"
+//         required
+//         className="w-full"
+//       />
+//     </div>
+//     <div className="flex flex-col">
+//       <label htmlFor="message" className="block text-sm font-medium mb-2">
+//         Message
+//       </label>
+//       <Textarea
+//         id="message"
+//         name="message"
+//         value={formData.message}
+//         onChange={handleChange}
+//         placeholder="Your message here..."
+//         rows={6}
+//         required
+//         className="w-full"
+//       />
+//     </div>
+//   </div>
+
+//   <Button
+//     type="submit"
+//     disabled={isSubmitting}
+//     className="w-full md:w-auto"
+//   >
+//     {isSubmitting ? (
+//       <span className="flex items-center">
+//         <svg
+//           className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+//           xmlns="http://www.w3.org/2000/svg"
+//           fill="none"
+//           viewBox="0 0 24 24"
+//         >
+//           <circle
+//             className="opacity-25"
+//             cx="12"
+//             cy="12"
+//             r="10"
+//             stroke="currentColor"
+//             strokeWidth="4"
+//           ></circle>
+//           <path
+//             className="opacity-75"
+//             fill="currentColor"
+//             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+//           ></path>
+//         </svg>
+//         Sending...
+//       </span>
+//     ) : (
+//       <span className="flex items-center">
+//         <Send className="mr-2 h-4 w-4" />
+//         Send Message
+//       </span>
+//     )}
+//   </Button>
+// </form>
+
+//             </div>
+//           </AnimatedReveal>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+
+
+
 import { useState } from "react";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Phone, Send, CheckCircle, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/components/ui/use-toast";
 import AnimatedReveal from "@/components/AnimatedReveal";
 
 interface ContactInfo {
@@ -12,6 +322,7 @@ interface ContactInfo {
   title: string;
   content: string;
   link?: string;
+  color: string;
 }
 
 const contactInfo: ContactInfo[] = [
@@ -19,23 +330,25 @@ const contactInfo: ContactInfo[] = [
     icon: <Mail className="h-5 w-5" />,
     title: "Email",
     content: "babatundebolu@gmail.com",
-    link: "babatundebolu@gmail.com",
+    link: "mailto:babatundebolu@gmail.com",
+    color: "text-red-500"
   },
   {
     icon: <Phone className="h-5 w-5" />,
     title: "Phone",
-    content: "+2348140830241",
+    content: "+234 814 083 0241",
     link: "tel:+2348140830241",
+    color: "text-green-500"
   },
   {
     icon: <MapPin className="h-5 w-5" />,
     title: "Location",
     content: "Lagos, Nigeria",
+    color: "text-blue-500"
   },
 ];
 
 export default function ContactSection() {
-  
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -43,262 +356,357 @@ export default function ContactSection() {
     subject: "",
     message: "",
   });
-  const { toast } = useToast();
+  
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"success" | "failed" | null>(null);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+    
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) newErrors.email = "Valid email required";
+    if (formData.phone && !formData.phone.match(/^\+?[\d\s\-\(\)]{10,}$/)) newErrors.phone = "Valid phone number required";
+    if (!formData.subject.trim()) newErrors.subject = "Subject is required";
+    if (!formData.message.trim()) newErrors.message = "Message is required";
+    if (formData.message.length < 20) newErrors.message = "Message should be at least 20 characters";
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: "" }));
+    }
+  };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      setSubmitStatus("error");
+      setTimeout(() => setSubmitStatus(null), 3000);
+      return;
+    }
+    
     setIsSubmitting(true);
+    
     try {
       const response = await fetch('https://adeboluserver.vercel.app/send-email', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData)
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
       });
 
       const data = await response.json();
 
       if (data.status === 'success') {
-          setSubmitStatus('success');
-          setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
       } else {
-          setSubmitStatus('failed');
+        setSubmitStatus('error');
       }
-  } catch (error) {
+    } catch (error) {
       console.error('Error sending message:', error);
-      setSubmitStatus('failed');
-  }
+      setSubmitStatus('error');
+    }
 
-  setIsSubmitting(false);
-
-  // Clear status message after 5 seconds
-  setTimeout(() => {
+    setIsSubmitting(false);
+    
+    setTimeout(() => {
       setSubmitStatus(null);
-  }, 5000);
-};
+    }, 5000);
+  };
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-24 bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900">
       <div className="container mx-auto px-4">
         <AnimatedReveal>
-          <div className="text-center mb-16">
-            <p className="inline-block rounded-full bg-gray-100 dark:bg-gray-800 px-3 py-1 text-sm font-medium mb-3">
-              Get In Touch
-            </p>
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-              Let's Work Together
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/10 to-blue-600/10 px-4 py-1.5 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                Get In Touch
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 max-w-3xl mx-auto">
+              Let's <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Work Together</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Have a project in mind or want to discuss a potential collaboration? I'd love to hear from you! Fill out the form below or reach out through any of the provided contact methods.
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Have a project in mind or want to discuss a potential collaboration? 
+              I'd love to hear from you! Fill out the form below or reach out through 
+              any of the provided contact methods.
             </p>
           </div>
         </AnimatedReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <AnimatedReveal delay={200} className="col-span-1">
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm border border-gray-100 dark:border-gray-700 h-full">
-              <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
-              <div className="space-y-6">
+            <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 shadow-xl border border-gray-100 dark:border-gray-700 h-full">
+              <h3 className="text-2xl font-bold mb-8">Contact Information</h3>
+              <div className="space-y-6 mb-10">
                 {contactInfo.map((item, index) => (
-                  <div key={index} className="flex items-start">
-                    <div className="bg-gray-100 dark:bg-gray-700 rounded-full p-2 mr-4">
-                      {item.icon}
+                  <div key={index} className="flex items-start group">
+                    <div className={`p-3 rounded-xl ${item.color} bg-opacity-10 mr-4 group-hover:scale-110 transition-transform`}>
+                      <div className={item.color}>
+                        {item.icon}
+                      </div>
                     </div>
                     <div>
-                      <h4 className="text-sm font-medium text-muted-foreground mb-1">
+                      <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
                         {item.title}
                       </h4>
                       {item.link ? (
                         <a
                           href={item.link}
-                          className="text-base hover-underline"
+                          className="text-lg font-medium hover-underline hover:text-primary transition-colors"
                         >
                           {item.content}
                         </a>
                       ) : (
-                        <p className="text-base">{item.content}</p>
+                        <p className="text-lg font-medium">{item.content}</p>
                       )}
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-10">
-                <h3 className="text-xl font-semibold mb-4">Follow Me</h3>
-                <div className="flex space-x-4">
-                  <a
-                    href="https://github.com/"
-                    className="bg-gray-100 dark:bg-gray-700 rounded-full p-2 hover:scale-110 transition-transform"
-                    aria-label="GitHub"
-                  >
-                    <svg className="h-5 w-5" viewBox="0 0 24 24">
-                      <path
-                        fill="currentColor"
-                        d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12c0-5.523-4.477-10-10-10z"
-                      />
-                    </svg>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/feed/"
-                    className="bg-gray-100 dark:bg-gray-700 rounded-full p-2 hover:scale-110 transition-transform"
-                    aria-label="LinkedIn"
-                  >
-                    <svg className="h-5 w-5" viewBox="0 0 24 24">
-                      <path
-                        fill="currentColor"
-                        d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
-                      />
-                    </svg>
-                  </a>
-                  <a
-                    href="https://wa.me/2348182296188"
-                    className="bg-gray-100 dark:bg-gray-700 rounded-full p-2 hover:scale-110 transition-transform"
-                    aria-label="WhatSapp"
-                    target="_blank"
-                  >
-                    <svg className="h-5 w-5" viewBox="0 0 24 24">
-                    <path
-                     fill="currentColor"
-                     d="M16.2 3.8A9.88 9.88 0 003.1 16.6L2 21.8l5.3-1.4a9.9 9.9 0 0014.4-8.7c0-2.6-1-5-2.9-6.9a9.88 9.88 0 00-2.6-1.9zM12 19.4a7.4 7.4 0 01-3.9-1.1L6 18l.7-2.4a7.4 7.4 0 01-1.1-3.9 7.4 7.4 0 0112.7-5.3 7.4 7.4 0 01-5.3 12.7zm3.5-5.5c-.2-.1-1.3-.6-1.5-.7s-.4-.1-.6.2c-.2.2-.7.7-.8.8-.1.2-.3.1-.5.1s-.9-.3-1.7-1c-.6-.6-1-1.3-1.1-1.5s0-.4.1-.5l.7-.8c.1-.2.2-.3.2-.6s0-.4-.1-.6-.6-1.5-.7-1.7c-.2-.3-.3-.3-.5-.3h-.6c-.2 0-.6.1-.9.4s-1.1 1-1.1 2.4 1.1 2.7 1.2 2.8c.1.2 2.2 3.5 5.3 4.8 1 .4 1.8.6 2.4.8 1 .3 1.9.3 2.6.2s1.3-.6 1.5-1.1c.2-.5.2-1 .2-1.1s-.2-.2-.4-.3z"
-                    />
+              <div className="pt-8 border-t border-gray-200 dark:border-gray-700">
+                <h3 className="text-xl font-bold mb-6">Follow Me</h3>
+                <div className="flex gap-4">
+                  {[
+                    { 
+                      href: "https://github.com/Boluski2", 
+                      label: "GitHub",
+                      icon: (
+                        <svg className="h-5 w-5" viewBox="0 0 24 24">
+                          <path fill="currentColor" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12c0-5.523-4.477-10-10-10z"/>
+                        </svg>
+                      )
+                    },
+                    { 
+                      href: "https://www.linkedin.com/in/adebolu-babatunde/", 
+                      label: "LinkedIn",
+                      icon: (
+                        <svg className="h-5 w-5" viewBox="0 0 24 24">
+                          <path fill="currentColor" d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                        </svg>
+                      )
+                    },
+                    { 
+                      href: "https://wa.me/2348182296188", 
+                      label: "WhatsApp",
+                      icon: (
+                        <svg className="h-5 w-5" viewBox="0 0 24 24">
+                          <path fill="currentColor" d="M16.2 3.8A9.88 9.88 0 003.1 16.6L2 21.8l5.3-1.4a9.9 9.9 0 0014.4-8.7c0-2.6-1-5-2.9-6.9a9.88 9.88 0 00-2.6-1.9zM12 19.4a7.4 7.4 0 01-3.9-1.1L6 18l.7-2.4a7.4 7.4 0 01-1.1-3.9 7.4 7.4 0 0112.7-5.3 7.4 7.4 0 01-5.3 12.7zm3.5-5.5c-.2-.1-1.3-.6-1.5-.7s-.4-.1-.6.2c-.2.2-.7.7-.8.8-.1.2-.3.1-.5.1s-.9-.3-1.7-1c-.6-.6-1-1.3-1.1-1.5s0-.4.1-.5l.7-.8c.1-.2.2-.3.2-.6s0-.4-.1-.6-.6-1.5-.7-1.7c-.2-.3-.3-.3-.5-.3h-.6c-.2 0-.6.1-.9.4s-1.1 1-1.1 2.4 1.1 2.7 1.2 2.8c.1.2 2.2 3.5 5.3 4.8 1 .4 1.8.6 2.4.8 1 .3 1.9.3 2.6.2s1.3-.6 1.5-1.1c.2-.5.2-1 .2-1.1s-.2-.2-.4-.3z"/>
+                        </svg>
+                      )
+                    },
+                  ].map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.href}
+                      className="p-3 rounded-xl bg-gray-100 dark:bg-gray-800 hover:scale-110 transition-all hover:shadow-lg group"
+                      aria-label={social.label}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <div className="text-gray-600 dark:text-gray-400 group-hover:text-primary transition-colors">
+                        {social.icon}
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
 
-                    </svg>
-                  </a>
+              <div className="mt-10 pt-8 border-t border-gray-200 dark:border-gray-700">
+                <h4 className="text-lg font-bold mb-4">Response Time</h4>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-600 dark:text-gray-400">Typically replies within:</span>
+                    <span className="font-semibold text-primary">1-2 hours</span>
+                  </div>
+                  <div className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-green-400 to-primary rounded-full w-4/5"></div>
+                  </div>
                 </div>
               </div>
             </div>
           </AnimatedReveal>
 
           <AnimatedReveal delay={400} className="col-span-1 lg:col-span-2">
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
-              <h3 className="text-xl font-semibold mb-6">Send a Message</h3>
+            <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
+              <h3 className="text-2xl font-bold mb-8">Send a Message</h3>
+              
               {submitStatus === 'success' && (
-                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-700">
-                  Thank you for your message! I'll get back to you shortly.
+                <div className="mb-8 p-4 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border border-green-200 dark:border-green-800 rounded-xl text-green-700 dark:text-green-300 flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold">Message sent successfully!</p>
+                    <p className="text-sm">Thank you for your message! I'll get back to you shortly.</p>
+                  </div>
                 </div>
               )}
-            <form onSubmit={handleSubmit} className="space-y-6">
-  <div className="flex flex-col gap-6">
-    <div className="flex flex-col">
-      <label htmlFor="name" className="block text-sm font-medium mb-2">
-        Name
-      </label>
-      <Input
-        id="name"
-        name="name"
-        value={formData.name}
-        onChange={handleChange}
-        placeholder="Your name"
-        required
-        className="w-full"
-      />
-    </div>
-    <div className="flex flex-col">
-      <label htmlFor="phone" className="block text-sm font-medium mb-2">
-        Phone
-      </label>
-      <Input
-        id="phone"
-        name="phone"
-        type="tel"
-        value={formData.phone}
-        onChange={handleChange}
-        placeholder="Number"
-        required
-        className="w-full"
-      />
-    </div>
-    <div className="flex flex-col">
-      <label htmlFor="email" className="block text-sm font-medium mb-2">
-        Email
-      </label>
-      <Input
-        id="email"
-        name="email"
-        type="email"
-        value={formData.email}
-        onChange={handleChange}
-        placeholder="your.email@example.com"
-        required
-        className="w-full"
-      />
-    </div>
-    <div className="flex flex-col">
-      <label htmlFor="subject" className="block text-sm font-medium mb-2">
-        Subject
-      </label>
-      <Input
-        id="subject"
-        name="subject"
-        value={formData.subject}
-        onChange={handleChange}
-        placeholder="What is this regarding?"
-        required
-        className="w-full"
-      />
-    </div>
-    <div className="flex flex-col">
-      <label htmlFor="message" className="block text-sm font-medium mb-2">
-        Message
-      </label>
-      <Textarea
-        id="message"
-        name="message"
-        value={formData.message}
-        onChange={handleChange}
-        placeholder="Your message here..."
-        rows={6}
-        required
-        className="w-full"
-      />
-    </div>
-  </div>
+              
+              {submitStatus === 'error' && (
+                <div className="mb-8 p-4 bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 border border-red-200 dark:border-red-800 rounded-xl text-red-700 dark:text-red-300 flex items-center gap-3">
+                  <AlertCircle className="h-5 w-5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold">Something went wrong!</p>
+                    <p className="text-sm">Please check your entries and try again, or contact me directly.</p>
+                  </div>
+                </div>
+              )}
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      Name *
+                    </label>
+                    <Input
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Your name"
+                      className={`w-full ${errors.name ? "border-red-500 focus:border-red-500" : ""}`}
+                    />
+                    {errors.name && (
+                      <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+                    )}
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      Email *
+                    </label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="your.email@example.com"
+                      className={`w-full ${errors.email ? "border-red-500 focus:border-red-500" : ""}`}
+                    />
+                    {errors.email && (
+                      <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+                    )}
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      Phone
+                    </label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="+234 000 000 0000"
+                      className={`w-full ${errors.phone ? "border-red-500 focus:border-red-500" : ""}`}
+                    />
+                    {errors.phone && (
+                      <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
+                    )}
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      Subject *
+                    </label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      placeholder="What is this regarding?"
+                      className={`w-full ${errors.subject ? "border-red-500 focus:border-red-500" : ""}`}
+                    />
+                    {errors.subject && (
+                      <p className="text-red-500 text-xs mt-1">{errors.subject}</p>
+                    )}
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                    Message *
+                  </label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell me about your project, timeline, and budget..."
+                    rows={6}
+                    className={`w-full ${errors.message ? "border-red-500 focus:border-red-500" : ""}`}
+                  />
+                  <div className="flex justify-between items-center">
+                    {errors.message && (
+                      <p className="text-red-500 text-xs">{errors.message}</p>
+                    )}
+                    <span className={`text-xs ml-auto ${formData.message.length < 20 ? 'text-gray-500' : 'text-green-500'}`}>
+                      {formData.message.length}/500
+                    </span>
+                  </div>
+                </div>
 
-  <Button
-    type="submit"
-    disabled={isSubmitting}
-    className="w-full md:w-auto"
-  >
-    {isSubmitting ? (
-      <span className="flex items-center">
-        <svg
-          className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <circle
-            className="opacity-25"
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="currentColor"
-            strokeWidth="4"
-          ></circle>
-          <path
-            className="opacity-75"
-            fill="currentColor"
-            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-          ></path>
-        </svg>
-        Sending...
-      </span>
-    ) : (
-      <span className="flex items-center">
-        <Send className="mr-2 h-4 w-4" />
-        Send Message
-      </span>
-    )}
-  </Button>
-</form>
-
+                <div className="flex items-center justify-between pt-4">
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    * Required fields
+                  </p>
+                  
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="px-8 py-6 rounded-full bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 shadow-lg hover:shadow-xl transition-all"
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center gap-2">
+                        <svg
+                          className="animate-spin h-5 w-5 text-white"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          ></path>
+                        </svg>
+                        Sending...
+                      </span>
+                    ) : (
+                      <span className="flex items-center gap-2">
+                        <Send className="h-5 w-5" />
+                        Send Message
+                      </span>
+                    )}
+                  </Button>
+                </div>
+              </form>
+              
+              <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+                <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
+                  I typically respond within 1-2 business hours. For urgent inquiries, 
+                  please call <a href="tel:+2348140830241" className="text-primary hover:underline">+234 814 083 0241</a>.
+                </p>
+              </div>
             </div>
           </AnimatedReveal>
         </div>
