@@ -125,15 +125,15 @@ export default function Footer() {
         <div className="border-t border-gray-200 dark:border-gray-800 pt-12">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-center md:text-left">
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600 dark:text-gray-400 ">
                 © {year} Adebolu Babatunde. All rights reserved.
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-500 mt-2">
+              {/* <p className="text-sm text-gray-500 dark:text-gray-500 mt-2">
                 Made with <Heart className="inline h-4 w-4 text-red-500 animate-pulse" /> using Next.js & Tailwind CSS
-              </p>
+              </p> */}
             </div>
             
-            <div className="flex flex-wrap justify-center gap-6">
+            {/* <div className="flex flex-wrap justify-center gap-6">
               <a 
                 href="/privacy" 
                 className="text-sm text-gray-500 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-colors"
@@ -152,10 +152,10 @@ export default function Footer() {
               >
                 Cookie Policy
               </a>
-            </div>
+            </div> */}
           </div>
           
-          <div className="mt-8 text-center">
+          {/* <div className="mt-8 text-center">
             <p className="text-xs text-gray-500 dark:text-gray-600">
               Last updated: {new Date().toLocaleDateString('en-US', { 
                 year: 'numeric', 
@@ -163,7 +163,7 @@ export default function Footer() {
                 day: 'numeric' 
               })}
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

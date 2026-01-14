@@ -161,7 +161,7 @@ import AnimatedReveal from "@/components/AnimatedReveal";
 
 interface Skill {
   name: string;
-  level: number;
+  // level: number;
   icon?: React.ReactNode;
   color: string;
 }
@@ -179,12 +179,12 @@ const skillCategories: SkillCategory[] = [
     name: "Frontend",
     icon: <Code className="h-5 w-5" />,
     skills: [
-      { name: "React", level: 95, color: "#61DAFB" },
-      { name: "TypeScript", level: 90, color: "#3178C6" },
-      { name: "Next.js", level: 85, color: "#000000" },
-      { name: "Tailwind CSS", level: 95, color: "#06B6D4" },
-      { name: "JavaScript", level: 95, color: "#F7DF1E" },
-      { name: "HTML5/CSS3", level: 98, color: "#E34F26" },
+      { name: "React",  color: "#61DAFB" },
+      { name: "TypeScript",  color: "#3178C6" },
+      { name: "Next.js",  color: "#000000" },
+      { name: "Tailwind CSS",  color: "#06B6D4" },
+      { name: "JavaScript",  color: "#F7DF1E" },
+      { name: "HTML5/CSS3",  color: "#E34F26" },
     ],
   },
   {
@@ -192,12 +192,12 @@ const skillCategories: SkillCategory[] = [
     name: "Backend",
     icon: <Server className="h-5 w-5" />,
     skills: [
-      { name: "Node.js", level: 90, color: "#339933" },
-      { name: "Express.js", level: 85, color: "#000000" },
-      { name: "Python", level: 80, color: "#3776AB" },
-      { name: "REST APIs", level: 95, color: "#FF6B6B" },
-      { name: "Authentication", level: 90, color: "#4ECDC4" },
-      { name: "Microservices", level: 75, color: "#FFD93D" },
+      { name: "Node.js",  color: "#339933" },
+      { name: "Express.js",  color: "#000000" },
+      // { name: "Python",  color: "#3776AB" },
+      { name: "REST APIs",  color: "#FF6B6B" },
+      { name: "Authentication",  color: "#4ECDC4" },
+      { name: "Microservices",  color: "#FFD93D" },
     ],
   },
   {
@@ -205,12 +205,12 @@ const skillCategories: SkillCategory[] = [
     name: "Database",
     icon: <Database className="h-5 w-5" />,
     skills: [
-      { name: "MongoDB", level: 85, color: "#47A248" },
-      { name: "PostgreSQL", level: 80, color: "#336791" },
-      { name: "Firebase", level: 75, color: "#FFCA28" },
-      { name: "Redis", level: 70, color: "#DC382D" },
-      { name: "Prisma", level: 85, color: "#2D3748" },
-      { name: "GraphQL", level: 75, color: "#E10098" },
+      { name: "MongoDB", color: "#47A248" },
+      { name: "PostgreSQL",  color: "#336791" },
+      { name: "Firebase",  color: "#FFCA28" },
+      { name: "Redis",  color: "#DC382D" },
+      { name: "Prisma",  color: "#2D3748" },
+      { name: "GraphQL",  color: "#E10098" },
     ],
   },
   {
@@ -218,25 +218,25 @@ const skillCategories: SkillCategory[] = [
     name: "Tools & DevOps",
     icon: <Cloud className="h-5 w-5" />,
     skills: [
-      { name: "Git & GitHub", level: 95, color: "#F05032" },
-      { name: "Docker", level: 80, color: "#2496ED" },
-      { name: "AWS", level: 75, color: "#FF9900" },
-      { name: "Vercel", level: 90, color: "#000000" },
-      { name: "CI/CD", level: 85, color: "#F5A623" },
-      { name: "Figma", level: 85, color: "#F24E1E" },
+      { name: "Git & GitHub",  color: "#F05032" },
+      // { name: "Docker", level: 80, color: "#2496ED" },
+      // { name: "AWS", level: 75, color: "#FF9900" },
+      { name: "Vercel", color: "#000000" },
+      { name: "CI/CD",  color: "#F5A623" },
+      // { name: "Figma", level: 85, color: "#F24E1E" },
     ],
   },
 ];
 
-const SkillBar = ({ name, level, color }: Skill) => {
-  const [animatedLevel, setAnimatedLevel] = useState(0);
+const SkillBar = ({ name,  color }: Skill) => {
+  // const [animatedLevel, setAnimatedLevel] = useState(0);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setAnimatedLevel(level);
-    }, 300);
-    return () => clearTimeout(timer);
-  }, [level]);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setAnimatedLevel(level);
+  //   }, 300);
+  //   return () => clearTimeout(timer);
+  // }, [level]);
 
   return (
     <div className="group relative p-4 bg-white dark:bg-gray-800/50 rounded-xl border border-gray-100 dark:border-gray-700 hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
@@ -255,11 +255,11 @@ const SkillBar = ({ name, level, color }: Skill) => {
           </div>
           <span className="font-semibold">{name}</span>
         </div>
-        <span className="font-bold text-lg" style={{ color }}>
+        {/* <span className="font-bold text-lg" style={{ color }}>
           {animatedLevel}%
-        </span>
+        </span> */}
       </div>
-      <div className="h-2 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+      {/* <div className="h-2 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
         <div
           className="h-full rounded-full transition-all duration-1000 ease-out"
           style={{ 
@@ -267,11 +267,11 @@ const SkillBar = ({ name, level, color }: Skill) => {
             background: `linear-gradient(90deg, ${color}, ${color}CC)`
           }}
         />
-      </div>
-      <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-900 text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap pointer-events-none">
+      </div> */}
+      {/* <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-900 text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap pointer-events-none">
         <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
         {level}% Proficiency
-      </div>
+      </div> */}
     </div>
   );
 };
@@ -303,10 +303,10 @@ export default function SkillsSection() {
         <AnimatedReveal delay={200}>
           <Tabs 
             defaultValue="frontend" 
-            className="max-w-6xl mx-auto"
+            className="max-w-6xl mx-auto "
             onValueChange={setActiveTab}
           >
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 mb-12 bg-gray-100 dark:bg-gray-800 p-1 rounded-2xl">
+            <TabsList className="grid w-full h-100 grid-cols-2 md:grid-cols-4 mb-12 bg-gray-100 dark:bg-gray-800 p-1 rounded-2xl">
               {skillCategories.map((category) => (
                 <TabsTrigger 
                   key={category.id} 
@@ -330,7 +330,7 @@ export default function SkillsSection() {
                     <SkillBar 
                       key={skill.name} 
                       name={skill.name} 
-                      level={skill.level} 
+                      // level={skill.level} 
                       color={skill.color}
                     />
                   ))}
@@ -350,10 +350,10 @@ export default function SkillsSection() {
                 { skill: "Responsive Design", emoji: "📱" },
                 { skill: "SEO Optimization", emoji: "🔍" },
                 { skill: "Performance", emoji: "⚡" },
-                { skill: "UI/UX Design", emoji: "🎨" },
-                { skill: "PWA", emoji: "📲" },
+                // { skill: "UI/UX Design", emoji: "🎨" },
+                // { skill: "PWA", emoji: "📲" },
                 { skill: "Accessibility", emoji: "♿" },
-                { skill: "Agile/Scrum", emoji: "🔄" },
+                // { skill: "Agile/Scrum", emoji: "🔄" },
                 { skill: "Code Review", emoji: "👁️" },
                 { skill: "Mentoring", emoji: "👨‍🏫" },
                 { skill: "Testing", emoji: "🧪" },
@@ -384,9 +384,9 @@ export default function SkillsSection() {
                   <div className="px-4 py-2 bg-primary/10 rounded-full text-primary font-medium">
                     Currently Learning
                   </div>
-                  <div className="px-4 py-2 bg-blue-600/10 rounded-full text-blue-600 dark:text-blue-400 font-medium">
+                  {/* <div className="px-4 py-2 bg-blue-600/10 rounded-full text-blue-600 dark:text-blue-400 font-medium">
                     AWS Certification
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

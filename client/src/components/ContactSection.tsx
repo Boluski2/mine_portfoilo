@@ -704,7 +704,7 @@ export default function ContactSection() {
               <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
                 <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
                   I typically respond within 1-2 business hours. For urgent inquiries, 
-                  please call <a href="tel:+2348140830241" className="text-primary hover:underline">+234 814 083 0241</a>.
+                  please call <a href="tel:+2348140830241" className="text-primary hover:underline text-rose-800 text-lg">+234 814 083 0241</a>.
                 </p>
               </div>
             </div>
