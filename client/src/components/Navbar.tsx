@@ -1,140 +1,3 @@
-
-// import { useState, useEffect } from "react";
-// import { Menu, X } from "lucide-react";
-// import { cn } from "@/lib/utils";
-// import { Button } from "@/components/ui/button";
-
-// interface NavLink {
-//   name: string;
-//   href: string;
-// }
-
-// const navLinks: NavLink[] = [
-//   { name: "Home", href: "#home" },
-//   { name: "About", href: "#about" },
-//   { name: "Skills", href: "#skills" },
-//   { name: "Projects", href: "#projects" },
-//   { name: "Contact", href: "#contact" },
-// ];
-
-// export default function Navbar() {
-//   const [isOpen, setIsOpen] = useState(false);
-//   const [activeSection, setActiveSection] = useState("home");
-//   const [scrolled, setScrolled] = useState(false);
-
-//   // Handle scroll and set active section
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       // Set navbar background when scrolled
-//       setScrolled(window.scrollY > 50);
-
-//       // Find active section
-//       const sections = document.querySelectorAll("section[id]");
-//       const scrollPosition = window.scrollY + 72; // Offset for navbar
-
-//       sections.forEach((section) => {
-//         const sectionTop = (section as HTMLElement).offsetTop;
-//         const sectionHeight = (section as HTMLElement).offsetHeight;
-//         const sectionId = section.getAttribute("id") || "";
-
-//         if (
-//           scrollPosition >= sectionTop &&
-//           scrollPosition < sectionTop + sectionHeight
-//         ) {
-//           setActiveSection(sectionId);
-//         }
-//       });
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-//     handleScroll(); // Initial check
-
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   // Close mobile menu when clicking a link
-//   const handleNavLinkClick = () => {
-//     setIsOpen(false);
-//   };
-
-//   return (
-//     <header
-//       className={cn(
-//         "fixed top-0 w-full z-50 transition-all duration-300",
-//         scrolled
-//           ? "bg-white/80 backdrop-blur-md border-b shadow-sm dark:bg-gray-900/80"
-//           : "bg-transparent"
-//       )}
-//     >
-//       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-//         <a
-//           href="#home"
-//           className="text-xl font-display font-medium tracking-tight"
-//         >
-//           <span className="font-bold">Adebolu</span> Babatunde
-//         </a>
-
-//         {/* Desktop Navigation */}
-//         <nav className="hidden md:flex items-center space-x-8">
-//           {navLinks.map((link) => (
-//             <a
-//               key={link.name}
-//               href={link.href}
-//               className={cn(
-//                 "nav-link text-sm font-medium transition-colors hover:text-black dark:hover:text-white",
-//                 activeSection === link.href.substring(1)
-//                   ? "text-black dark:text-white"
-//                   : "text-gray-600 dark:text-gray-400"
-//               )}
-//             >
-//               {link.name}
-//             </a>
-//           ))}
-//         </nav>
-
-//         {/* Mobile Navigation Toggle */}
-//         <Button
-//           variant="ghost"
-//           size="icon"
-//           className="md:hidden"
-//           onClick={() => setIsOpen(!isOpen)}
-//         >
-//           {isOpen ? <X size={24} /> : <Menu size={24} />}
-//           <span className="sr-only">Toggle menu</span>
-//         </Button>
-
-//         {/* Mobile Menu */}
-//         <div
-//           className={cn(
-//             "fixed inset-0 top-[56px] z-50 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm md:hidden transform transition-transform duration-300 ease-in-out",
-//             isOpen ? "translate-x-0" : "translate-x-full"
-//           )}
-//         >
-//           <nav className="flex flex-col h-full p-8 space-y-6 text-center">
-//             {navLinks.map((link) => (
-//               <a
-//                 key={link.name}
-//                 href={link.href}
-//                 className={cn(
-//                   "text-lg font-medium py-2 border-b border-gray-100 dark:border-gray-800",
-//                   activeSection === link.href.substring(1)
-//                     ? "text-black dark:text-white"
-//                     : "text-gray-600 dark:text-gray-400"
-//                 )}
-//                 onClick={handleNavLinkClick}
-//               >
-//                 {link.name}
-//               </a>
-//             ))}
-//           </nav>
-//         </div>
-//       </div>
-//     </header>
-//   );
-// }
-
-
-
 import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -203,7 +66,7 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
         scrolled
-          ? "bg-white/90 backdrop-blur-md border-b shadow-lg dark:bg-gray-900/90 dark:border-gray-800"
+          ? "bg-white/95 backdrop-blur-md border-b shadow-lg dark:bg-gray-900/95 dark:border-gray-800"
           : "bg-transparent"
       )}
     >
@@ -255,7 +118,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4 md:hidden">
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="p-2 rounded-full bg-gray-100 dark:bg-gray-800"
+            className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:scale-110 transition-transform hover:shadow-md"
             aria-label="Toggle dark mode"
           >
             {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -265,38 +128,102 @@ export default function Navbar() {
             variant="ghost"
             size="icon"
             onClick={() => setIsOpen(!isOpen)}
+            className="relative z-50"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
             <span className="sr-only">Toggle menu</span>
           </Button>
         </div>
 
+        {/* Mobile Menu Overlay */}
         <div
           className={cn(
-            "fixed inset-0 top-[72px] z-50 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg md:hidden transform transition-all duration-300 ease-in-out",
-            isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+            "fixed inset-0 top-0 z-40 w-full h-screen bg-black/40 backdrop-blur-sm md:hidden transition-opacity duration-300",
+            isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          )}
+          onClick={() => setIsOpen(false)}
+        />
+
+        {/* Mobile Menu Content */}
+        <div
+          className={cn(
+            "fixed top-0 right-0 h-screen w-[300px] max-w-full z-50 bg-white dark:bg-gray-900 shadow-2xl md:hidden transform transition-all duration-300 ease-in-out",
+            isOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
-          <nav className="flex flex-col h-full p-8 space-y-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className={cn(
-                  "text-lg font-medium py-3 px-4 rounded-lg transition-all",
-                  activeSection === link.href.substring(1)
-                    ? "bg-primary/10 text-primary dark:text-primary"
-                    : "text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
-                )}
-                onClick={handleNavLinkClick}
+          <div className="flex flex-col h-full p-6">
+            {/* Close Button */}
+            <div className="flex justify-end mb-8">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsOpen(false)}
+                className="rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
               >
-                {link.name}
-              </a>
-            ))}
-            <Button className="mt-4 w-full bg-primary hover:bg-primary/90">
-              <a href="#contact" className="w-full text-center">Get In Touch</a>
-            </Button>
-          </nav>
+                <X size={24} />
+                <span className="sr-only">Close menu</span>
+              </Button>
+            </div>
+
+            {/* Navigation Links */}
+            <nav className="flex-1">
+              <div className="space-y-2">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className={cn(
+                      "block py-3 px-4 rounded-lg text-lg font-medium transition-all",
+                      activeSection === link.href.substring(1)
+                        ? "bg-primary/10 text-primary dark:text-primary"
+                        : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    )}
+                    onClick={handleNavLinkClick}
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </div>
+            </nav>
+
+            {/* CTA Button */}
+            <div className="pt-6 border-t border-gray-200 dark:border-gray-800">
+              <Button 
+                className="w-full bg-primary hover:bg-primary/90 py-6 text-base"
+                onClick={() => {
+                  setIsOpen(false);
+                  // Smooth scroll to contact section
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                Get In Touch
+              </Button>
+              
+              {/* Theme Toggle in Mobile Menu */}
+              <div className="mt-6 flex items-center justify-center">
+                <button
+                  onClick={() => setDarkMode(!darkMode)}
+                  className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                  aria-label="Toggle dark mode"
+                >
+                  {darkMode ? (
+                    <>
+                      <Sun className="h-5 w-5" />
+                      <span className="font-medium">Light Mode</span>
+                    </>
+                  ) : (
+                    <>
+                      <Moon className="h-5 w-5" />
+                      <span className="font-medium">Dark Mode</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </header>
