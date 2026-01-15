@@ -527,7 +527,7 @@ export default function ContactSection() {
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="text-gray-600 dark:text-gray-400">Typically replies within:</span>
-                    <span className="font-semibold text-primary">1-2 hours</span>
+                    <span className="font-semibold text-primary">30min</span>
                   </div>
                   <div className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                     <div className="h-full bg-gradient-to-r from-green-400 to-primary rounded-full w-4/5"></div>
@@ -703,7 +703,7 @@ export default function ContactSection() {
               
               <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
                 <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                  I typically respond within 1-2 business hours. For urgent inquiries, 
+                  I typically respond within 30min. For urgent inquiries, 
                   please call <a href="tel:+2348140830241" className="text-primary hover:underline text-rose-800 text-lg">+234 814 083 0241</a>.
                 </p>
               </div>
