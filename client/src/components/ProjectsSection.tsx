@@ -18,6 +18,7 @@ interface Project {
   id: number;
   title: string;
   description: string;
+  longDescription?: string;
   image: string;
   tags: string[];
   liveUrl: string;
@@ -33,6 +34,7 @@ const projects: Project[] = [
     id: 1,
     title: "OEA Consults",
     description: "GIS & drone solutions platform with AI-powered data visualization",
+    longDescription: "OEA Consults is a platform that integrates drone data, GIS mapping, and AI-driven analytics to provide actionable insights for surveying and environmental monitoring. I led the frontend architecture and integrated map visualizations with live telemetry feeds.",
     image: "./Oea_logo.png",
     tags: ["React", "Node.js", "GIS", "MongoDB"],
     liveUrl: "https://www.oeaconsults.com/",
@@ -43,8 +45,22 @@ const projects: Project[] = [
   },
   {
     id: 2,
+    title: "Karken Company",
+    description: "Responsive, SEO-first marketing site for a B2B food distributor.",
+    longDescription: "A Responsive marketing site for Karken Company, a B2B distributor of authentic African food products in the Baltics. The site is implemented in React + TypeScript with Vite and Tailwind, includes multilingual content (Lithuanian / English), SEO best-practices (Open Graph, Twitter tags, JSON-LD), lazy/prioritized images for performance, and an EmailJS-powered contact flow for lead capture. Pages cover Home, About, Services, Products, Contact and compliance/policy pages, designed for accessibility and high performance.",
+    image: "./karken-logo.jpg",
+    tags: ["React", "TypeScript", "Vite", "Tailwind"],
+    liveUrl: "https://karken-nine.vercel.app/",
+    githubUrl: "https://github.com/Boluski2/karken-.git",
+    featured: false,
+    year: 2025,
+    type: 'web'
+  },
+  {
+    id: 3,
     title: "Real Estate Platform",
     description: "Complete property management & agent portal solution",
+    longDescription: "A full-featured property management system with listings, agent dashboards, and payment workflows. Implemented server-side filtering, role-based access, and an optimization layer for large media uploads.",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop&crop=entropy&auto=format",
     tags: ["React", "Node.js", "MongoDB", "Prisma"],
     liveUrl: "https://real-estate-fullstack-nine.vercel.app/",
@@ -54,9 +70,10 @@ const projects: Project[] = [
     type: 'fullstack'
   },
    {
-    id: 3,
+    id: 4,
     title: "Forever E-commerce",
     description: "High-performance e-commerce platform with real-time inventory",
+    longDescription: "Built a high-throughput storefront with real-time inventory sync, checkout optimizations, and server-rendered pages for SEO. Integrated Stripe and built a robust webhook processing pipeline.",
     image: "/lastest.png",
     tags: ["Next.js", "Node.js", "MongoDB", "Stripe"],
     liveUrl: "https://e-commers-frontend-three.vercel.app/",
@@ -66,9 +83,10 @@ const projects: Project[] = [
     type: 'web'
   },
     {
-    id: 4,
+    id: 5,
     title: "TimeOffer",
     description: "Employee management SaaS with time tracking & analytics",
+    longDescription: "TimeOffer is a SaaS product for attendance, leave management, and analytics. I implemented time-series reporting dashboards, authentication flows, and multi-tenant data separation.",
     image: "/atendance.webp",
     tags: ["React", "Node.js", "MongoDB", "Auth0"],
     liveUrl: "https://time-offer-beta.vercel.app/",
@@ -77,22 +95,24 @@ const projects: Project[] = [
     year: 2025,
     type: 'fullstack'
   },
-    {
-    id: 5,
-    title: "Magodo Drive",
-    description: "Modern real estate platform with immersive property tours",
-    image: "/drive.png",
-    tags: ["React", "Tailwind", "Framer Motion", "Mapbox"],
-    liveUrl: "https://magododrive.vercel.app/",
-    githubUrl: "",
-    featured: true,
-    year: 2024,
-    type: 'web'
-  },
+  //   {
+  //   id: 6,
+  //   title: "Magodo Drive",
+  //   description: "Modern real estate platform with immersive property tours",
+  //   longDescription: "Magodo Drive focuses on immersive property experiences, including 3D tours and interactive maps. I worked on performance tuning and animations to deliver smooth walkthroughs.",
+  //   image: "/drive.png",
+  //   tags: ["React", "Tailwind", "Framer Motion", "Mapbox"],
+  //   liveUrl: "https://magododrive.vercel.app/",
+  //   githubUrl: "",
+  //   featured: true,
+  //   year: 2024,
+  //   type: 'web'
+  // },
   {
-    id: 6,
+    id: 7,
     title: "Burger Website",
     description: "Interactive restaurant platform with 3D animations",
+    longDescription: "A playful restaurant site demonstrating 3D graphics and immersive UI using Three.js and GSAP. Focus was on creating memorable micro-interactions and responsive 3D content.",
     image: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=800&h=600&fit=crop&crop=entropy&auto=format",
     tags: ["GSAP", "Three.js", "JavaScript", "CSS"],
     liveUrl: "https://burger-website-olive.vercel.app/",
@@ -102,9 +122,10 @@ const projects: Project[] = [
     type: 'web'
   },
   {
-    id: 7,
+    id: 8,
     title: "Image Chat App",
     description: "Real-time messaging with image sharing & notifications",
+    longDescription: "A chat application supporting real-time messaging, image uploads, and browser notifications. Built using Socket.io with a focus on low-latency messaging and resilient reconnection strategies.",
     image: "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=800&h=600&fit=crop&crop=entropy&auto=format",
     tags: ["Socket.io", "Express", "MongoDB", "Cloudinary"],
     liveUrl: "https://imaga-app.vercel.app/",
@@ -113,23 +134,12 @@ const projects: Project[] = [
     year: 2023,
     type: 'fullstack'
   },
-  // {
-  //   id: 8,
-  //   title: "Education Platform",
-  //   description: "Online learning platform with course management",
-  //   image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop&crop=entropy&auto=format",
-  //   tags: ["HTML", "CSS", "JavaScript", "Responsive"],
-  //   liveUrl: "https://www.tianateaches.com/",
-  //   githubUrl: "https://github.com/Boluski2/TianaTeaches",
-  //   featured: false,
-  //   year: 2023,
-  //   type: 'web'
-  // }
 ];
 
 const ProjectCard = ({ project }: { project: Project }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [detailsOpen, setDetailsOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
   const getTypeIcon = (type: Project['type']) => {
@@ -236,13 +246,13 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </h3>
         
         {/* Description */}
-        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
-          {project.description}
+        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+          {detailsOpen ? (project.longDescription ?? project.description) : project.description}
         </p>
         
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-5">
-          {project.tags.slice(0, 3).map((tag) => (
+          {project.tags.map((tag) => (
             <span 
               key={tag} 
               className="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 rounded-lg text-xs text-gray-600 dark:text-gray-400"
@@ -250,23 +260,57 @@ const ProjectCard = ({ project }: { project: Project }) => {
               {tag}
             </span>
           ))}
-          {project.tags.length > 3 && (
-            <span className="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 rounded-lg text-xs text-gray-400">
-              +{project.tags.length - 3}
-            </span>
-          )}
         </div>
         
-        {/* View Project Link */}
-        <a
-          href={project.liveUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-primary/80 transition-colors group/link"
-        >
-          <span>View Project</span>
-          <ArrowUpRight className="h-4 w-4 transition-transform group-hover/link:translate-x-1" />
-        </a>
+        <div className="flex items-center justify-between">
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-primary/80 transition-colors group/link"
+          >
+            <span>View Project</span>
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover/link:translate-x-1" />
+          </a>
+
+          <button
+            onClick={() => setDetailsOpen(prev => !prev)}
+            aria-expanded={detailsOpen}
+            className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+          >
+            <span>{detailsOpen ? 'Less details' : 'More details'}</span>
+            <ChevronRight className={`h-4 w-4 transform transition-transform ${detailsOpen ? 'rotate-90' : ''}`} />
+          </button>
+        </div>
+
+        {/* Expanded details */}
+        {detailsOpen && (
+          <div className="mt-4 border-t pt-4 text-sm text-gray-700 dark:text-gray-300">
+            {project.longDescription && (
+              <p className="mb-3">{project.longDescription}</p>
+            )}
+            <div className="mb-3">
+              <div className="text-xs text-gray-500 dark:text-gray-400 mb-2">Tech stack</div>
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="px-2 py-1 bg-gray-50 dark:bg-gray-800 rounded text-xs">{tag}</span>
+                ))}
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <a href={project.liveUrl} target="_blank" rel="noreferrer" className="px-3 py-2 bg-primary text-white rounded-md text-sm inline-flex items-center gap-2">
+                <Eye className="h-4 w-4" />
+                Live Demo
+              </a>
+              {project.githubUrl && (
+                <a href={project.githubUrl} target="_blank" rel="noreferrer" className="px-3 py-2 bg-gray-100 dark:bg-gray-800 rounded-md text-sm inline-flex items-center gap-2">
+                  <Github className="h-4 w-4" />
+                  Source
+                </a>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
