@@ -50,7 +50,7 @@ const projects: Project[] = [
     longDescription: "A Responsive marketing site for Karken Company, a B2B distributor of authentic African food products in the Baltics. The site is implemented in React + TypeScript with Vite and Tailwind, includes multilingual content (Lithuanian / English), SEO best-practices (Open Graph, Twitter tags, JSON-LD), lazy/prioritized images for performance, and an EmailJS-powered contact flow for lead capture. Pages cover Home, About, Services, Products, Contact and compliance/policy pages, designed for accessibility and high performance.",
     image: "./karken-logo.jpg",
     tags: ["React", "TypeScript", "Vite", "Tailwind"],
-    liveUrl: "https://karken-nine.vercel.app/",
+    liveUrl: "https://karkencompany.lt/",
     githubUrl: "https://github.com/Boluski2/karken-.git",
     featured: false,
     year: 2025,
