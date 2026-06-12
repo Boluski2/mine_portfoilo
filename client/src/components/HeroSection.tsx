@@ -322,7 +322,7 @@ export default function HeroSection() {
                   </Button>
                   <Button variant="outline" className="rounded-full px-8 py-6 text-base group border-2">
                     <Download className="mr-2 group-hover:translate-y-1 transition-transform" />
-                    <a href="/AdeboluBabatundeCv.pdf" target="_blank" rel="noopener noreferrer">
+                    <a href="/AdeboluBabatunde.pdf" target="_blank" rel="noopener noreferrer">
                       Download Resume
                     </a>
                   </Button>

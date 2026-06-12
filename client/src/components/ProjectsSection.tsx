@@ -32,6 +32,19 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    title: "Time Offer",
+    description: "A leave request and attendance management SaaS for small businesses, with time tracking and analytics features.",
+    longDescription: "Time Offer is a cloud-based solution designed to streamline leave requests and attendance tracking for small businesses. I built the development of the frontend interface and integrated real-time analytics for improved workforce management.",
+    image: "./TimeOffer_logo.png",
+    tags: ["React", "Node.js", "MongoDB"],
+    liveUrl: "https://time-offer-beta.vercel.app/",
+    githubUrl: "https://github.com/Boluski2/TimeOffer.git",
+    featured: true,
+    year: 2026,
+    type: 'fullstack'
+  },
+    {
+    id: 2,
     title: "OEA Consults",
     description: "GIS & drone solutions platform with AI-powered data visualization",
     longDescription: "OEA Consults is a platform that integrates drone data, GIS mapping, and AI-driven analytics to provide actionable insights for surveying and environmental monitoring. I led the frontend architecture and integrated map visualizations with live telemetry feeds.",
@@ -44,7 +57,7 @@ const projects: Project[] = [
     type: 'fullstack'
   },
   {
-    id: 2,
+    id: 3,
     title: "Karken Company",
     description: "Responsive, SEO-first marketing site for a B2B food distributor.",
     longDescription: "A Responsive marketing site for Karken Company, a B2B distributor of authentic African food products in the Baltics. The site is implemented in React + TypeScript with Vite and Tailwind, includes multilingual content (Lithuanian / English), SEO best-practices (Open Graph, Twitter tags, JSON-LD), lazy/prioritized images for performance, and an EmailJS-powered contact flow for lead capture. Pages cover Home, About, Services, Products, Contact and compliance/policy pages, designed for accessibility and high performance.",
@@ -57,7 +70,7 @@ const projects: Project[] = [
     type: 'web'
   },
   {
-    id: 3,
+    id: 4,
     title: "Real Estate Platform",
     description: "Complete property management & agent portal solution",
     longDescription: "A full-featured property management system with listings, agent dashboards, and payment workflows. Implemented server-side filtering, role-based access, and an optimization layer for large media uploads.",
@@ -70,7 +83,7 @@ const projects: Project[] = [
     type: 'fullstack'
   },
    {
-    id: 4,
+    id: 5,
     title: "Forever E-commerce",
     description: "High-performance e-commerce platform with real-time inventory",
     longDescription: "Built a high-throughput storefront with real-time inventory sync, checkout optimizations, and server-rendered pages for SEO. Integrated Stripe and built a robust webhook processing pipeline.",
@@ -82,34 +95,8 @@ const projects: Project[] = [
     year: 2024,
     type: 'web'
   },
-    {
-    id: 5,
-    title: "TimeOffer",
-    description: "Employee management SaaS with time tracking & analytics",
-    longDescription: "TimeOffer is a SaaS product for attendance, leave management, and analytics. I implemented time-series reporting dashboards, authentication flows, and multi-tenant data separation.",
-    image: "/atendance.webp",
-    tags: ["React", "Node.js", "MongoDB", "Auth0"],
-    liveUrl: "https://time-offer-beta.vercel.app/",
-    githubUrl: "",
-    featured: true,
-    year: 2025,
-    type: 'fullstack'
-  },
-  //   {
-  //   id: 6,
-  //   title: "Magodo Drive",
-  //   description: "Modern real estate platform with immersive property tours",
-  //   longDescription: "Magodo Drive focuses on immersive property experiences, including 3D tours and interactive maps. I worked on performance tuning and animations to deliver smooth walkthroughs.",
-  //   image: "/drive.png",
-  //   tags: ["React", "Tailwind", "Framer Motion", "Mapbox"],
-  //   liveUrl: "https://magododrive.vercel.app/",
-  //   githubUrl: "",
-  //   featured: true,
-  //   year: 2024,
-  //   type: 'web'
-  // },
   {
-    id: 7,
+    id: 6,
     title: "Burger Website",
     description: "Interactive restaurant platform with 3D animations",
     longDescription: "A playful restaurant site demonstrating 3D graphics and immersive UI using Three.js and GSAP. Focus was on creating memorable micro-interactions and responsive 3D content.",
@@ -120,19 +107,6 @@ const projects: Project[] = [
     featured: false,
     year: 2023,
     type: 'web'
-  },
-  {
-    id: 8,
-    title: "Image Chat App",
-    description: "Real-time messaging with image sharing & notifications",
-    longDescription: "A chat application supporting real-time messaging, image uploads, and browser notifications. Built using Socket.io with a focus on low-latency messaging and resilient reconnection strategies.",
-    image: "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=800&h=600&fit=crop&crop=entropy&auto=format",
-    tags: ["Socket.io", "Express", "MongoDB", "Cloudinary"],
-    liveUrl: "https://imaga-app.vercel.app/",
-    githubUrl: "https://github.com/Boluski2/ImagaApp",
-    featured: false,
-    year: 2023,
-    type: 'fullstack'
   },
 ];
 
