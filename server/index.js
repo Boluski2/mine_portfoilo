@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 app.use(cors());
 
 app.use(bodyParser.json());
@@ -21,12 +21,16 @@ app.post('/send-email', async (req, res) => {
 
     const { name, email, phone, subject, message } = req.body; 
 
-    if (!name || !email || !phone || !subject || !message) {
-        return res.status(400).json({ status: 'failed', response: 'All fields are required' });
+    if (!name || !email || !subject || !message) {
+        return res.status(400).json({ status: 'failed', response: 'Name, email, subject, and message are required' });
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return res.status(400).json({ status: 'failed', response: 'Invalid email format.' });
+    }
+
+    if (phone && !/^\+?[\d\s\-\(\)]{10,}$/.test(phone)) {
+      return res.status(400).json({ status: 'failed', response: 'Invalid phone number format.' });
     }
 
     try {
@@ -51,7 +55,7 @@ app.post('/send-email', async (req, res) => {
             <div style="background-color: #ffffff; padding: 15px; border-radius: 8px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
               <h3 style="color: #333;"><strong>Name:</strong> ${name}</h3>
               <h3 style="color: #333;"><strong>Email:</strong> ${email}</h3>
-              <h3 style="color: #333;"><strong>Phone:</strong> ${phone}</h3>
+              <h3 style="color: #333;"><strong>Phone:</strong> ${phone || 'Not provided'}</h3>
               <h3 style="color: #333;"><strong>Subject:</strong> ${subject}</h3>
               <h3 style="color: #333;"><strong>Message:</strong> ${message}</h3>
             </div>
