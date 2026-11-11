@@ -1,194 +1,258 @@
-// components/Projects.tsx
+
 import { useState } from "react";
-import { ExternalLink, Github, ChevronRight } from "lucide-react";
+import {
+  ArrowUpRight, ChevronDown, ExternalLink, Github,
+} from "lucide-react";
 
 const projects = [
   {
     id: 1,
-    title: "Time Offer",
-    description: "Leave request and attendance management SaaS for small businesses.",
+    title: "GeoField",
+    category: "Geospatial Engineering",
+    status: "In Development",
+    description:
+      "A mobile-first field operations platform for collecting, managing, and reviewing location-based field data.",
     longDescription:
-      "A cloud-based solution designed to streamline leave requests and attendance tracking. Built the frontend interface and integrated real-time analytics for improved workforce management.",
-    tags: ["React", "Node.js", "MongoDB"],
-    image: "/TimeOffer_logo.png",
-    liveUrl: "https://time-offer-beta.vercel.app/",
-    githubUrl: "https://github.com/Boluski2/TimeOffer.git",
+      "Currently developing a field operations solution with project management, task tracking, GPS-tagged observations, photo capture, and a mobile mapping experience. The product direction is focused on industrial field teams.",
+    tags: ["Python", "FastAPI", "PostgreSQL", "Expo", "React Native", "Leaflet"],
     featured: true,
-    year: "2026",
   },
   {
     id: 2,
+    title: "Geospatial Dashboard",
+    category: "Geospatial Engineering",
+    status: "Professional Work",
+    description:
+      "Interactive geospatial dashboards for exploring spatial datasets and supporting data-driven decisions.",
+    longDescription:
+      "Professional experience contributing to geospatial dashboard interfaces and interactive spatial data visualisation. Project details are intentionally kept general.",
+    tags: ["Next.js", "React", "deck.gl", "MapLibre", "Data Visualisation"],
+    featured: true,
+  },
+  {
+    id: 3,
+    title: "WebGIS Platform",
+    category: "Geospatial Engineering",
+    status: "Professional Work",
+    description:
+      "Web-based geographic information systems for presenting and exploring spatial information.",
+    longDescription:
+      "Experience contributing to web mapping interfaces and geographic data platforms. Client-specific information and internal implementation details are not published.",
+    tags: ["WebGIS", "React", "Mapping", "Spatial Data"],
+    featured: true,
+  },
+  {
+    id: 4,
+    title: "DayMark Time Offer",
+    category: "Full-Stack Applications",
+    status: "Live",
+    description:
+      "A leave request and attendance management application for simplifying workforce administration.",
+    longDescription:
+      "A workforce management application designed to streamline employee leave requests and attendance tracking through a centralised digital interface.",
+    tags: ["React", "Node.js", "MongoDB"],
+    image: "/timeOffer.png",
+    imageFit: "contain",
+    liveUrl: "https://time-offer-beta.vercel.app/",
+    githubUrl: "https://github.com/Boluski2/TimeOffer.git",
+    featured: true,
+    // year: "2026",
+  },
+  {
+    id: 5,
+    title: "Dashboard Inventory Management",
+    category: "Full-Stack Applications",
+    status: "Live",
+    description:
+      "A business management platform designed for makeup artists to manage bookings, clients, and services.",
+    longDescription:
+      "Building a web-based business management solution with a structured database, authentication, and a foundation for booking and client management workflows.",
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Drizzle ORM", "Better Auth"],
+    image: "/dashboard.png",
+    imageFit: "contain",
+    liveUrl: "https://inventory-six-amber-53.vercel.app/",
+    githubUrl: "https://github.com/Boluski2/adornedbyella_dashboard-.git",
+    featured: true,
+  },
+  {
+    id: 6,
+    title: "Karken Company",
+    category: "Web Development",
+    status: "Live",
+    description:
+      "A responsive multilingual marketing website for a B2B food distributor.",
+    longDescription:
+      "Built a multilingual website using React and TypeScript, with responsive layouts and an email-based lead capture experience.",
+    tags: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+    image: "/karken-logo.jpg",
+    imageFit: "contain",
+    liveUrl: "https://karkencompany.lt/",
+    githubUrl: "https://github.com/Boluski2/karken-.git",
+  },
+  {
+    id: 7,
     title: "OEA Consults",
+    status: "Live",
+    category: "Web Development",
     description: "GIS & drone solutions platform with AI-powered data visualization.",
     longDescription:
       "A platform integrating drone data, GIS mapping, and AI-driven analytics for surveying and environmental monitoring. Led the frontend architecture and integrated map visualizations with live telemetry.",
     tags: ["React", "Node.js", "GIS", "MongoDB"],
     image: "/Oea_logo.png",
+    imageFit: "contain",
     liveUrl: "https://www.oeaconsults.com/",
     githubUrl: "https://github.com/Boluski2/OEA_Consults",
     featured: true,
-    year: "2025",
   },
   {
-    id: 3,
-    title: "Karken Company",
-    description: "Responsive, SEO-first marketing site for a B2B food distributor.",
+    id: 8,
+    title: "lamikawakila",
+    category: "Web Development",
+    status: "Live",
+    description:
+      "A Petroleum website PACRA-registered industrial supplier serving Zambia's mining sector with diesel fuel, PPE, and mining consumables from the heart of the Copperbelt. ",
     longDescription:
-      "A multilingual marketing site for a B2B distributor of authentic African food products in the Baltics. Built with React + TypeScript, Vite, and Tailwind, with EmailJS-powered lead capture.",
-    tags: ["React", "TypeScript", "Vite", "Tailwind"],
-    image: "/karken-logo.jpg",
-    liveUrl: "https://karkencompany.lt/",
-    githubUrl: "https://github.com/Boluski2/karken-.git",
-    featured: false,
-    year: "2025",
+      "A responsive website for a Zambian industrial supplier, featuring product information, service offerings, and contact details. Built with modern web technologies to ensure fast load times and a user-friendly experience.",
+    tags: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+    image:
+      "/lamikawakila.png",
+    imageFit: "contain",
+    liveUrl: "https://lamikawakila.com/",
+    githubUrl: "https://github.com/Boluski2/Lamikawakila-Investments-Limited.git",
   },
   {
-    id: 4,
-    title: "Real Estate Platform",
-    description: "Complete property management and agent portal solution.",
-    longDescription:
-      "A full-featured property management system with listings, agent dashboards, and payment workflows. Implemented server-side filtering, role-based access, and an optimization layer for large media uploads.",
-    tags: ["React", "Node.js", "MongoDB", "Prisma"],
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop&crop=entropy&auto=format",
-    liveUrl: "https://real-estate-fullstack-nine.vercel.app/",
-    githubUrl: "https://github.com/Boluski2/Real_Estate.git",
-    featured: false,
-    year: "2025",
-  },
-  {
-    id: 5,
+    id: 9,
     title: "Forever E-commerce",
-    description: "High-performance e-commerce platform with real-time inventory.",
+    category: "Web Development",
+    status: "Live",
+    description:
+      "An e-commerce application with product browsing and online shopping workflows.",
     longDescription:
-      "A high-throughput storefront with real-time inventory sync, checkout optimizations, and server-rendered pages for SEO. Integrated Stripe and built a robust webhook processing pipeline.",
+      "A full-stack e-commerce project built around a modern storefront experience, product presentation, and checkout functionality.",
     tags: ["Next.js", "Node.js", "MongoDB", "Stripe"],
     image: "/lastest.png",
+    imageFit: "contain",
     liveUrl: "https://e-commers-frontend-three.vercel.app/",
     githubUrl: "https://github.com/Boluski2/e-commers.git",
-    featured: false,
-    year: "2024",
   },
-  {
-    id: 6,
-    title: "Burger Website",
-    description: "Interactive restaurant platform with 3D animations.",
-    longDescription:
-      "A playful restaurant site demonstrating 3D graphics and immersive UI using Three.js and GSAP. Focused on creating memorable micro-interactions and responsive 3D content.",
-    tags: ["GSAP", "Three.js", "JavaScript", "CSS"],
-    image: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=800&h=600&fit=crop&crop=entropy&auto=format",
-    liveUrl: "https://burger-website-olive.vercel.app/",
-    githubUrl: "https://github.com/Boluski2/burger-website",
-    featured: false,
-    year: "2023",
-  },
+
+];
+
+const categories = [
+  // "Geospatial Engineering", // Temporarily hidden.
+  "Full-Stack Applications",
+  "Web Development",
 ];
 
 export default function Projects() {
   const [expanded, setExpanded] = useState<number | null>(null);
 
-  const toggleExpand = (id: number) => {
-    setExpanded(expanded === id ? null : id);
-  };
-
   return (
-    <section id="projects" className="py-24 px-6 bg-gray-50/50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-medium tracking-widest text-gray-400 uppercase">
-            Portfolio
-          </span>
-          <h2 className="mt-4 text-3xl md:text-4xl font-light">
-            Selected projects
-          </h2>
-          <p className="mt-4 text-gray-500 leading-relaxed">
-            A selection of recent work, built with modern tools and a focus on quality.
-          </p>
+    <section id="projects" className="section section-paper">
+      <div className="page-wrap">
+        <div className="section-heading">
+          <div><p className="eyebrow"><span className="eyebrow-line" />Selected work</p><h2>Projects built with <em>purpose.</em></h2></div>
+          <p className="section-summary">A selection of applications and client work. Professional projects are described at a high level where details are confidential.</p>
         </div>
+        <div className="project-groups">
+          {categories.map((name) => {
+            const categoryProjects = projects.filter(
+              (project) => project.category === name
+            );
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => {
-            const isExpanded = expanded === project.id;
             return (
-              <div
-                key={project.id}
-                className={`group bg-white border border-gray-100 rounded-lg overflow-hidden transition-all ${
-                  isExpanded ? "md:col-span-2 lg:col-span-2" : ""
-                }`}
-              >
-                <div className="aspect-[16/10] bg-gray-100 overflow-hidden relative">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  {project.featured && (
-                    <span className="absolute top-3 left-3 px-3 py-1 bg-gray-900/80 text-white text-xs rounded-full">
-                      Featured
-                    </span>
-                  )}
-                </div>
+              <div key={name} className="project-group">
+                <h3 className="project-category">{name}</h3>
+                <div className="project-grid">
+                  {categoryProjects.map((project) => {
+                    const isExpanded = expanded === project.id;
 
-                <div className="p-6">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <div className="text-xs text-gray-400 mb-1">{project.year}</div>
-                      <h3 className="text-lg font-medium text-gray-900">{project.title}</h3>
-                    </div>
-                    <div className="flex gap-2 flex-shrink-0">
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 text-gray-400 hover:text-gray-900 transition"
-                        aria-label="Live preview"
-                      >
-                        <ExternalLink size={18} />
-                      </a>
-                      {project.githubUrl && (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 text-gray-400 hover:text-gray-900 transition"
-                          aria-label="GitHub"
-                        >
-                          <Github size={18} />
-                        </a>
-                      )}
-                    </div>
-                  </div>
+                    return (
+                      <article key={project.id} className="project-card">
+                        {project.image ? (
+                          <div className={`project-image-frame ${project.imageFit === "contain" ? "project-image-frame-contain" : ""}`}>
+                            <img src={project.image} alt={`${project.title} project preview`} loading="lazy" className={`project-image ${project.imageFit === "contain" ? "project-image-contain" : ""}`} />
+                          </div>
+                        ) : (
+                          <div className="project-image-frame project-cover">
+                            <span className="project-cover-index">PROJECT {String(project.id).padStart(2, "0")}</span>
+                            <span className="project-cover-title">{project.title}</span>
+                          </div>
+                        )}
+                        <div className="project-info">
+                          <div className="project-title-line"><div><p className="project-meta">{project.status}</p><h4>{project.title}</h4></div>
+                            <div className="project-links">
+                              {project.liveUrl && (
+                                <a
+                                  href={project.liveUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  aria-label={`Visit ${project.title}`}
+                                  title="Live project"
+                                  className="project-icon-link"
+                                >
+                                  <ExternalLink size={16} />
+                                </a>
+                              )}
 
-                  <p className="mt-2 text-sm text-gray-500 leading-relaxed">
-                    {isExpanded ? project.longDescription : project.description}
-                  </p>
+                              {project.githubUrl && (
+                                <a
+                                  href={project.githubUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  aria-label={`${project.title} GitHub repository`}
+                                  title="GitHub repository"
+                                  className="project-icon-link"
+                                >
+                                  <Github size={16} />
+                                </a>
+                              )}
+                            </div>
+                          </div>
+                          <p className="project-description">
+                            {isExpanded
+                              ? project.longDescription
+                              : project.description}
+                          </p>
 
-                  <div className="mt-4 flex flex-wrap gap-1.5">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2.5 py-1 bg-gray-50 border border-gray-100 rounded text-xs text-gray-500"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                          <div className="project-tags">
+                            {project.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="project-tag"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
 
-                  <button
-                    onClick={() => toggleExpand(project.id)}
-                    className="mt-4 text-sm text-gray-400 hover:text-gray-600 transition flex items-center gap-1"
-                  >
-                    {isExpanded ? "Show less" : "Read more"}
-                    <ChevronRight
-                      size={16}
-                      className={`transition-transform ${isExpanded ? "rotate-90" : ""}`}
-                    />
-                  </button>
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setExpanded(isExpanded ? null : project.id)
+                            }
+                            aria-expanded={isExpanded}
+                            className="project-more"
+                          >
+                            {isExpanded ? "Show less" : "More about this project"}
+                            <ChevronDown
+                              size={16}
+                              className={`transition-transform ${
+                                isExpanded ? "rotate-180" : ""
+                              }`}
+                            />
+                          </button>
+                        </div>
+                      </article>
+                    );
+                  })}
                 </div>
               </div>
             );
           })}
         </div>
+
+        <a href="https://github.com/Boluski2" target="_blank" rel="noopener noreferrer" className="github-note">More code and experiments on GitHub <ArrowUpRight size={16} /></a>
       </div>
     </section>
   );

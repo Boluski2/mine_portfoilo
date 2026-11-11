@@ -1,88 +1,167 @@
-// components/About.tsx
-import { Briefcase, Code, Users, Zap } from "lucide-react";
 
-const stats = [
-  { value: "3+", label: "Years Experience" },
-  { value: "12+", label: "Projects Delivered" },
-  { value: "8+", label: "Happy Clients" },
-  { value: "100%", label: "Commitment" },
+import {
+  Compass,
+  Layers3,
+  Map,
+  Workflow,
+  Code2,
+  Database,
+} from "lucide-react";
+
+const focusAreas = [
+  {
+    value: "Frontend Engineering",
+    label: "Interfaces & user experiences",
+    icon: Layers3,
+  },
+  {
+    value: "Backend Development",
+    label: "APIs & application architecture",
+    icon: Workflow,
+  },
+  {
+    value: "Geospatial Technology",
+    label: "GIS, WebGIS & mapping",
+    icon: Map,
+  },
+  {
+    value: "Product Engineering",
+    label: "From concept to implementation",
+    icon: Compass,
+  },
+];
+
+const capabilities = [
+  {
+    label: "Application Development",
+    icon: Code2,
+  },
+  {
+    label: "Data & Spatial Systems",
+    icon: Database,
+  },
 ];
 
 export default function About() {
   return (
-    <section id="about" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+    <section
+      id="about"
+      className="relative overflow-hidden border-y border-slate-200 bg-slate-50 px-6 py-24 md:py-32"
+    >
+      <div className="relative mx-auto max-w-6xl">
+        <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
+          {/* Section introduction */}
           <div>
-            <span className="text-xs font-medium tracking-widest text-gray-400 uppercase">
-              About
-            </span>
-            <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
-              Developer with a
-              <br />
-              <span className="font-medium">craftsman's mindset.</span>
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.17em] text-blue-800">
+              <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
+              About me
+            </div>
+
+            <h2 className="mt-6 max-w-xl text-4xl font-semibold leading-[1.12] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-[3.5rem]">
+              Where software engineering meets{" "}
+              <span className="text-blue-700">
+                geospatial technology.
+              </span>
             </h2>
-            <p className="mt-6 text-gray-500 leading-relaxed">
-              I write code that's maintainable, performant, and a pleasure to work with.
-              With experience across the full stack, I bring a holistic approach to
-              building web applications from database design to pixel-perfect interfaces.
-            </p>
-            <p className="mt-4 text-gray-500 leading-relaxed">
-              My work is driven by a commitment to quality, accessibility, and
-              delivering real value to users and businesses alike.
+
+            <p className="mt-6 max-w-md text-base leading-8 text-slate-600">
+              I combine software development and spatial thinking
+              to build digital products, data-driven applications,
+              and technology that addresses real-world challenges.
             </p>
 
-            <div className="mt-8 grid grid-cols-2 gap-4">
-              {stats.map((stat) => (
-                <div key={stat.label} className="bg-gray-50 border border-gray-100 rounded-lg p-4 text-center">
-                  <div className="text-2xl font-medium text-gray-900">{stat.value}</div>
-                  <div className="text-xs text-gray-400 mt-0.5">{stat.label}</div>
+            {/* Academic foundation */}
+            <div className="mt-9 flex items-center gap-4 border-t border-slate-200 pt-6">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-blue-100 text-blue-800">
+                <Map size={21} />
+              </span>
+
+              <div>
+                <p className="text-sm font-semibold text-slate-900">
+                  B.Tech. Remote Sensing & GIS
+                </p>
+                <p className="mt-1 text-xs text-slate-500">
+                  Federal University of Technology, Akure
+                </p>
+              </div>
+            </div>
+
+            {/* Supporting capabilities */}
+            <div className="mt-7 flex flex-wrap gap-3">
+              {capabilities.map(({ label, icon: Icon }) => (
+                <div
+                  key={label}
+                  className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-600"
+                >
+                  <Icon size={15} className="text-blue-700" />
+                  {label}
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="space-y-6">
-            <div className="bg-white border border-gray-100 rounded-lg p-6">
-              <div className="flex items-start gap-4">
-                <div className="p-2 bg-gray-100 rounded-md">
-                  <Code size={20} className="text-gray-700" />
-                </div>
-                <div>
-                  <h3 className="text-sm font-medium text-gray-900">Clean Code</h3>
-                  <p className="text-sm text-gray-500 mt-1 leading-relaxed">
-                    Readable, well-structured code that's easy to maintain and scale.
-                  </p>
-                </div>
+          {/* Personal story */}
+          <div className="lg:pt-2">
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.045)] sm:p-9">
+              <div className="mb-7 flex items-center gap-3">
+                <span className="h-px w-8 bg-blue-700" />
+                <span className="text-[11px] font-semibold uppercase tracking-[0.17em] text-blue-800">
+                  My journey
+                </span>
+              </div>
+
+              <div className="space-y-5 text-[15px] leading-8 text-slate-600">
+                <p>
+                  My journey began with Remote Sensing and GIS,
+                  where I developed an interest in spatial data,
+                  geographic information, and how technology can
+                  support better decision-making.
+                </p>
+
+                <p>
+                  That interest grew into software engineering.
+                  I began exploring how programming could transform
+                  complex data and workflows into accessible,
+                  interactive digital experiences.
+                </p>
+
+                <p>
+                  Today, I work across frontend development,
+                  backend engineering, database systems, and
+                  geospatial technologies. I enjoy building
+                  everything from full-stack applications and APIs
+                  to interactive dashboards and WebGIS solutions.
+                </p>
+
+                <p>
+                  My approach is simple: understand the problem,
+                  design a practical solution, and build software
+                  that is useful, maintainable, and ready to evolve.
+                </p>
               </div>
             </div>
 
-            <div className="bg-white border border-gray-100 rounded-lg p-6">
-              <div className="flex items-start gap-4">
-                <div className="p-2 bg-gray-100 rounded-md">
-                  <Zap size={20} className="text-gray-700" />
-                </div>
-                <div>
-                  <h3 className="text-sm font-medium text-gray-900">Performance</h3>
-                  <p className="text-sm text-gray-500 mt-1 leading-relaxed">
-                    Fast, optimized applications that deliver a smooth user experience.
-                  </p>
-                </div>
-              </div>
-            </div>
+            {/* Areas of focus */}
+            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {focusAreas.map(({ value, label, icon: Icon }) => (
+                <div
+                  key={value}
+                  className="group flex items-center gap-3 rounded-xl border border-slate-200 bg-white/80 p-4 transition duration-200 hover:-translate-y-0.5 hover:border-blue-200 hover:bg-white hover:shadow-md hover:shadow-blue-950/5"
+                >
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-blue-50 text-blue-800">
+                    <Icon size={18} />
+                  </span>
 
-            <div className="bg-white border border-gray-100 rounded-lg p-6">
-              <div className="flex items-start gap-4">
-                <div className="p-2 bg-gray-100 rounded-md">
-                  <Users size={20} className="text-gray-700" />
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold text-slate-900">
+                      {value}
+                    </p>
+                    <p className="mt-1 text-xs text-slate-500">
+                      {label}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-sm font-medium text-gray-900">Collaboration</h3>
-                  <p className="text-sm text-gray-500 mt-1 leading-relaxed">
-                    Clear communication and a team-first approach to every project.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
